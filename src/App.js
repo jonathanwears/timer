@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
 import './App.css';
+import ButtonStartStop from "./components/ButtonStartStop";
+import Counter from "./components/Counter";
 
 function App() {
+
+  const [start, setStart] = useState(false);
+  const [count, setCount] = useState(5);
+
+  function startGame() {
+    // 60 then 5
+    setStart(!start)
+    // because of slow state setting
+
+  };
+
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <ButtonStartStop start={start} startGame={startGame} />
+      {start && <button>Restart</button>}
+      <Counter start={start} setStart={setStart} count={count} setCount={setCount} />
+
     </div>
   );
 }
