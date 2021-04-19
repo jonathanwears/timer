@@ -1,29 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import './App.css';
-import ButtonStartStop from "./components/ButtonStartStop";
+import ControlButtons from "./components/ControlButtons";
 import Counter from "./components/Counter";
+import {  StartProvider } from "./components/StartContext";
 
 function App() {
 
-  const [start, setStart] = useState(false);
   const [count, setCount] = useState(5);
-
-  function startGame() {
-    // 60 then 5
-    setStart(!start)
-    // because of slow state setting
-
-  };
+ 
 
   return (
 
-    <div className="App">
+    <StartProvider>
+      <div className="App">
 
-      <ButtonStartStop start={start} startGame={startGame} />
-      {start && <button>Restart</button>}
-      <Counter start={start} setStart={setStart} count={count} setCount={setCount} />
+        <ControlButtons />
+        
+        <Counter setCount={setCount} />
 
-    </div>
+      </div>
+    </StartProvider>
+
   );
 }
 

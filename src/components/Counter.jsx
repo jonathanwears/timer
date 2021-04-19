@@ -1,18 +1,14 @@
-import React from "react";
-import beep from "../assets/beep-07.wav";
+import React, { useContext } from "react";
 import Timer from "../components/Timer";
+import { StartContext } from "./StartContext";
 
-function Counter({ start, setStart, setCount }) {
+function Counter({ setCount }) {
 
-
-	//reset timers
-	function reset() {
-		setStart(false);
-		setCount(5);
-	};
+	const [start, setStart] = useContext(StartContext);
 
 	return (
 		start && <Timer />
+		
 	)
 };
 
