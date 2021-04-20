@@ -1,13 +1,12 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import './App.css';
-import ControlButtons from "./components/ControlButtons";
+import ControlButtons from "./components/controlButtons/ControlButtons";
 import Counter from "./components/Counter";
-import {  StartProvider } from "./components/StartContext";
+import { StartProvider } from "./components/StartContext";
 
 function App() {
 
-  const [count, setCount] = useState(5);
- 
+
 
   return (
 
@@ -15,8 +14,7 @@ function App() {
       <div className="App">
 
         <ControlButtons />
-        
-        <Counter setCount={setCount} />
+        <Counter />
 
       </div>
     </StartProvider>

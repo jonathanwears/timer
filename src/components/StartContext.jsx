@@ -4,6 +4,12 @@ export const StartContext = createContext();
 
 export const StartProvider = props => {
 	const [start, setStart] = useState(false);
+	const [pause, setPause] = useState(false);
 
-	return <StartContext.Provider value={[start, setStart]}>{props.children}</StartContext.Provider>;
+	return (
+		<StartContext.Provider value={{ startValues: [start, setStart], pauseValues: [pause, setPause]}} >
+			{props.children}
+		</StartContext.Provider>
+	);
+
 };

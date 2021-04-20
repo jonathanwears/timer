@@ -2,14 +2,15 @@ import React, { useContext } from "react";
 import Timer from "../components/Timer";
 import { StartContext } from "./StartContext";
 
-function Counter({ setCount }) {
+function Counter() {
 
-	const [start, setStart] = useContext(StartContext);
+	const { startValues } = useContext(StartContext);
+	const [start] = startValues;
 
 	return (
 		start && <Timer />
-		
-	)
+
+	);
 };
 
 export default Counter;

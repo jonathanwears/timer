@@ -1,16 +1,15 @@
 import React, { useContext } from "react";
-import { StartContext } from "./StartContext";
+import { StartContext } from "../StartContext";
 
 function ButtonStartStop() {
 
-	const [start, setStart] = useContext(StartContext);
-
+	const { startValues } = useContext(StartContext);
+	const [start, setStart] = startValues;
 	function startGame() {
 		setStart(!start);
-	}
+	};
 
 	return (
-
 		<button onClick={startGame}>{start ? "stop" : "start"}</button>
 	);
 };

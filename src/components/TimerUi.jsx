@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { StartContext } from "./StartContext";
 
-function TimerUi({ initialCount, rest, setRest, pause }) {
+function TimerUi({ initialCount, rest, setRest }) {
 
 	const [count, setCount] = useState(initialCount);
-	
+	const { pauseValues } = useContext(StartContext);
+	const [pause] = pauseValues;
+
 
 	useEffect(() => {
 		if (count === 0) {
