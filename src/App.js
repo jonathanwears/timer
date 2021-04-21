@@ -4,8 +4,8 @@ import ControlButtons from "./components/controlButtons/ControlButtons";
 import Counter from "./components/Counter";
 import { StartProvider } from "./components/StartContext";
 
-function App() {
 
+function App() {
 
 
   return (

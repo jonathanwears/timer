@@ -16,9 +16,11 @@ function TimerUi({ initialCount, rest, setRest }) {
 
 	useEffect(() => {
 		if (!pause && count >= 0) {
-			setTimeout(() => {
+			const timer = setTimeout(() => {
 				setCount((count - 1))
 			}, 1000)
+
+			return () => clearInterval(timer);
 		};
 
 	}, [count, setCount, pause]);

@@ -10,7 +10,7 @@ function ButtonStartStop() {
 	};
 
 	return (
-		<button onClick={startGame}>{start ? "stop" : "start"}</button>
+		<button onClick={startGame}>{start ? "Reset" : "start"}</button>
 	);
 };
 
