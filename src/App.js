@@ -12,10 +12,8 @@ function App() {
 
     <StartProvider>
       <div className="App">
-
         <ControlButtons />
         <Counter />
-
       </div>
     </StartProvider>
 

@@ -10,7 +10,6 @@ function Counter() {
 
 	function reducer(state, action) {
 
-
 		switch (action.type) {
 			case "increment": return state + 1;
 			case "decrement":
@@ -27,7 +26,6 @@ function Counter() {
 
 	function inputValidation(action) {
 		const parsedValue = parseInt(action.value)
-
 		if (Number.isNaN(parsedValue)) {
 			return "";
 		}

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import TimerUi from "./TimerUi";
 
-function Timer({stretchCounter, restCounter}) {
+function Timer({ stretchCounter, restCounter }) {
 
 	const [rest, setRest] = useState(true);
-
-
+	
 	return (
 		<div>
 			{rest && <TimerUi initialCount={restCounter} rest={rest} setRest={setRest} />}

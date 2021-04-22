@@ -5,11 +5,16 @@ function TimerUi({ initialCount, rest, setRest }) {
 
 	const [count, setCount] = useState(initialCount);
 	const { pauseValues } = useContext(StartContext);
-	const [pause] = pauseValues;
-
+	const [pause, setPause] = pauseValues;
+	
 
 	useEffect(() => {
+		return () => setPause(false);
+	}, [setPause]);
+	
+	useEffect(() => {
 		if (count === 0) {
+			
 			setRest(!rest);
 		};
 	});
@@ -19,7 +24,6 @@ function TimerUi({ initialCount, rest, setRest }) {
 			const timer = setTimeout(() => {
 				setCount((count - 1))
 			}, 1000)
-
 			return () => clearInterval(timer);
 		};
 
