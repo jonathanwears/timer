@@ -9,14 +9,31 @@ function Counter() {
 	const [start] = startValues;
 
 	function reducer(state, action) {
+
+
 		switch (action.type) {
 			case "increment": return state + 1;
-			case "decrement": return state - 1;
-			case "inputValue": return state = action.value;
+			case "decrement":
+				if ((state - 1) <= 0) {
+					return 0;
+				}
+				return state - 1;
+			case "inputValue":
+				let input = inputValidation(action);
+				return input;
 			default: throw new Error(action.type);
 		};
 	};
-	
+
+	function inputValidation(action) {
+		const parsedValue = parseInt(action.value)
+
+		if (Number.isNaN(parsedValue)) {
+			return "";
+		}
+		return parsedValue;
+	}
+
 	const [stretchCounter, dispatchStretch] = useReducer(reducer, 60)
 	const [restCounter, dispatchRest] = useReducer(reducer, 5)
 
@@ -27,8 +44,13 @@ function Counter() {
 				dispatchStretch={dispatchStretch}
 				restCounter={restCounter}
 				dispatchRest={dispatchRest}
+
 			/>}
-			{start && <Timer stretchCounter={stretchCounter} restCounter={restCounter} />}
+			{start && <Timer
+				stretchCounter={stretchCounter}
+				restCounter={restCounter}
+
+			/>}
 		</div>
 	);
 };

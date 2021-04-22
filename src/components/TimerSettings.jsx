@@ -1,22 +1,13 @@
 import React from "react";
+import CounterSettings from "./CounterSettings";
 
-function TimerSettings({stretchCounter, dispatchStretch, restCounter, dispatchRest }) {
+function TimerSettings({ stretchCounter, dispatchStretch, restCounter, dispatchRest }) {
 
 	return (
-
 		<div className="timer-settings">
-			<div className="stretch-counter">
-				<button onClick={() => dispatchStretch({ type: "increment" })}> up</button>
-				<input type="number" value={stretchCounter} onChange={(event) => { const value = event.target.value; dispatchStretch({ type: "inputValue", value }) }}></input>
-				<button onClick={() => dispatchStretch({ type: "decrement" })}> down</button>
-			</div>
-			<div className="rest-counter">
-				<button onClick={() => dispatchRest({ type: "increment" })}> up</button>
-				<input type="number" value={restCounter} onChange={(event) => { const value = event.target.value; dispatchRest({ type: "inputValue", value }) }} ></input>
-				<button onClick={() => dispatchRest({ type: "decrement" })}> down</button>
-			</div>
+			<CounterSettings name="Stretch" counter={stretchCounter} dispatch={dispatchStretch} />
+			<CounterSettings name="Rest" counter={restCounter} dispatch={dispatchRest} />
 		</div>
-
 	);
 };
 
