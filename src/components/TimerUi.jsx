@@ -6,18 +6,16 @@ function TimerUi({ initialCount, rest, setRest }) {
 	const [count, setCount] = useState(initialCount);
 	const { pauseValues } = useContext(StartContext);
 	const [pause, setPause] = pauseValues;
-	
 
 	useEffect(() => {
 		return () => setPause(false);
 	}, [setPause]);
-	
+
 	useEffect(() => {
 		if (count === 0) {
-			
 			setRest(!rest);
 		};
-	});
+	},);
 
 	useEffect(() => {
 		if (!pause && count >= 0) {

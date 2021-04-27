@@ -1,23 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import './App.css';
-import ControlButtons from "./components/controlButtons/ControlButtons";
-import Counter from "./components/Counter";
+import OldFunction from "./components/OldFunction";
+import NewFunction from "./components/NewFunction";
 import { StartProvider } from "./components/StartContext";
-
 
 function App() {
 
+  const [type, setType] = useState("");
+
+  function handleClick(event) {
+    if (event.target.value === "old") {
+      setType("old");
+    } else {
+      setType("new");
+    };
+  };
 
   return (
 
     <StartProvider>
       <div className="App">
-        <ControlButtons />
-        <Counter />
+        <button onClick={handleClick} value={"old"}>Old</button>
+        <button onClick={handleClick} value={"new"}>New</button>
+        {type === "old" && <OldFunction />}
+        {type === "new" && <NewFunction />}
       </div>
     </StartProvider>
 
   );
-}
+};
 
 export default App;
