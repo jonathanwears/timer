@@ -15,17 +15,17 @@ function TimerUi({ initialCount, rest, setRest }) {
 		if (count === 0) {
 			setRest(!rest);
 		};
-	},);
+	});
 
 	useEffect(() => {
 		if (!pause && count >= 0) {
 			const timer = setTimeout(() => {
 				setCount((count - 1))
 			}, 1000)
-			return () => clearInterval(timer);
+			return () => clearTimeout(timer);
 		};
 
-	}, [count, setCount, pause]);
+	}, [count, pause]);
 
 	return (<h1>{count}</h1>);
 
