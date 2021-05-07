@@ -13,7 +13,7 @@ function PauseButton() {
 
 	};
 
-	return start && <button onClick={handlePauseClick}>{pause ? "unpause" : "pause"}</button>
+	return start && <button onClick={handlePauseClick}>{pause ? "resume" : "pause"}</button>
 
 };
 

@@ -36,7 +36,7 @@ function Counter() {
 	const [restCounter, dispatchRest] = useReducer(reducer, 5)
 
 	return (
-		<div>
+		<>
 			{!start && <TimerSettings
 				stretchCounter={stretchCounter}
 				dispatchStretch={dispatchStretch}
@@ -49,7 +49,7 @@ function Counter() {
 				restCounter={restCounter}
 
 			/>}
-		</div>
+		</>
 	);
 };
 

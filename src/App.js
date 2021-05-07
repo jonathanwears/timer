@@ -6,7 +6,7 @@ import { StartProvider } from "./components/StartContext";
 
 function App() {
 
-  const [type, setType] = useState("");
+  const [type, setType] = useState("old");
 
   function handleClick(event) {
     if (event.target.value === "old") {
@@ -20,10 +20,12 @@ function App() {
 
     <StartProvider>
       <div className="App">
-        <button onClick={handleClick} value={"old"}>Old</button>
-        <button onClick={handleClick} value={"new"}>New</button>
+        {/* <div className="type-buttons">
+          <button onClick={handleClick} value={"old"}>Old</button>
+          <button onClick={handleClick} value={"new"}>New</button>
+        </div> */}
         {type === "old" && <OldFunction />}
-        {type === "new" && <NewFunction />}
+        {/* {type === "new" && <NewFunction />} */}
       </div>
     </StartProvider>
 

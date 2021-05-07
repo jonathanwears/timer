@@ -8,8 +8,7 @@ function MappingCounters({ repeat }) {
 		counters.push((i));
 	};
 
-
-
+	
 	return (
 		<div>
 			{counters.map(() => <Counter />)}

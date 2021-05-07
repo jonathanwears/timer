@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import ControlButtons from "./controlButtons/ControlButtons";
-import Counter from "./Counter";
 import MappingCounters from "./MappingCounters"
-
 
 function NewFunction() {
 
@@ -11,7 +9,7 @@ function NewFunction() {
 	function handleOnchange(event) {
 		setRepeat(event.target.value)
 	}
-	
+
 	return (
 		<div>
 			<input type="number" min="0" onChange={handleOnchange}></input>
