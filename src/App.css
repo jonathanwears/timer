@@ -3,7 +3,6 @@ body {
 	padding:0;
 	font-family: 'Nanum Gothic', sans-serif;
 	background-color: #f8f8ff;
-
 }
 
 .App {
@@ -15,7 +14,16 @@ body {
 	width: 100vw;	
 }
 
+.App h1 {
+	font-size: 10rem;
+	color:#D6BBB4;
+}
+
 /* buttons for start stop pause */
+.control-buttons {
+	display: flex;
+	justify-content: center;
+}
 
 .control-buttons button {
 	font-size: 1.3rem;
@@ -28,6 +36,12 @@ body {
 	color:#fff;
 }
 
+.control-buttons button:hover {
+	background-color: #D6BBB4;
+}
+
+/* counter settings */
+
 .timer-settings {
 	display: flex;
 	flex-direction: column;
@@ -38,28 +52,28 @@ body {
 	border-radius: 2%;;
 }
 
-.control-buttons {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width:20%;
-}; 
-
-.stretch-counter input {
+.stretch-counter input, h3 {
 	text-align: center;
 }
 
 .stretch-counter h3 {
 	color:#fff;
 	font-size: 2rem;
-	text-align: center;
+
 }
 
-.stretch-counter button {
+.stretch-counter button, input {
 	font-size:1.5rem;
+	border-style: none;
+}
+.stretch-counter button {
 	width:100%;	
 	background-color: #fff;
-	border-style: none;
+}
+
+.stretch-counter input {
+	width:99.2%;	
+	color: #D6BBB4;
 }
 
 .stretch-counter button:hover{
@@ -76,21 +90,10 @@ body {
 	border-bottom-right-radius: 10px;
 }
 
-.stretch-counter input {
-	font-size:1.5rem;
-	text-align: center;
-	width:99.2%;	
-	border-style: none;
-	color: #D6BBB4;
-}
-
+/* stop the arrows in the input number field */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.App h1 {
-	font-size: 10rem;
-	color:#D6BBB4;
-}
