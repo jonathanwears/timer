@@ -11,9 +11,10 @@ function NewFunction() {
 	function handleOnchange(event) {
 		setRepeat(event.target.value)
 	}
+	
 	return (
 		<div>
-			<input type="number" onChange={handleOnchange}></input>
+			<input type="number" min="0" onChange={handleOnchange}></input>
 			<ControlButtons />
 			<MappingCounters repeat={repeat}/>
 		</div>

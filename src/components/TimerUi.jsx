@@ -24,11 +24,9 @@ function TimerUi({ initialCount, rest, setRest }) {
 			}, 1000)
 			return () => clearTimeout(timer);
 		};
-
 	}, [count, pause]);
 
 	return (<h1>{count}</h1>);
-
 };
 
 export default TimerUi;

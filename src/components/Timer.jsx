@@ -11,7 +11,6 @@ function Timer({ stretchCounter, restCounter }) {
 			{!rest && <TimerUi initialCount={stretchCounter} rest={rest} setRest={setRest} />}
 		</div>
 	);
-
 };
 
 export default Timer;
